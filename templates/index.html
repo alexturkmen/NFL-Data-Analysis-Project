@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>the huddle is real</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		
+		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">The Super Bowl Statisticians Present:<span></span></a></div>
+				<a href="#menu">All Punts Intended</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="heatmap.html">Heat Map</a></li>
+					<li><a href="videos.html">Half-Time Shows</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<h1>Sundays are reserved for rest & football.</h1>
+						<p>Analyzing the past five years of Super Bowl data<br />Player salaries, television ratings, and bowl winners; oh my!</p>
+					</header>
+					<a href="#main" class="button big scrolly">Scroll Down</a>
+				</div>
+			</section>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+										<div class="image round fit">
+											<a href="heatmap.html" class="link"><img src="{{ url_for('static', filename='images/pic01.jpg') }}" alt="" /></a>
+										</div>
+									</div>
+									<div class="col col2">
+										<h3>Player Salaries</h3>
+										<p>text text text</p>
+										<p>text text maybe table? </p>
+										<div id="plot"></div>
+										<a href="#" class="button">First Down</a>
+									</div>
+								</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style2">
+						<div class="inner">
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Television Ratings</h3>
+									<p>text text text</p>
+									<p>text text maybe table? </p>
+									<select id="selDataset" class="backg-color" onchange=clrchange()></select>
+									<div id="plot2"></div>
+									<button onclick="location.href = 'https://www.sportsmediawatch.com/super-bowl-ratings-historical-viewership-chart-cbs-nbc-fox-abc/';" id="myButton" class="float-left submit-button" >Nielsen Ratings by Network</button>
+								</div>
+								<div class="col col1 first">
+									<div class="image round fit">
+										<a href="heatmap.html" class="link"><img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Top Winning Teams</h2>
+								<p>Ranking the most super bowl wins to date:</p>
+							</header>
+							<div class="flex flex-3">
+								<div class="col align-center">
+									<div class="image square fit">
+										<!-- <img src="images/pic03.jpg" alt="" /> -->
+										<img src="{{ url_for('static', filename='images/pic03.jpg') }}" alt="" />
+									</div>
+									<p>Pittburgh Steelers & New England Patriots (6 wins)</p>
+									<button onclick="location.href = 'https://www.steelers.com/';" id="myButton" class="float-left submit-button" >Steelers Home Page</button>
+									<button onclick="location.href = 'https://www.patriots.com/';" id="myButton" class="float-left submit-button" >Patriots Home Page</button>
+								</div>
+								<div class="col align-center">
+									<div class="image square fit">
+										<!-- <img src="images/pic05.jpg" alt="" /> -->
+										<img src="{{ url_for('static', filename='images/pic05.jpg') }}" alt="" />
+									</div>
+									<p>Dallas Cowboys & San Francisco 49ers (5 wins) </p>
+									<button onclick="location.href = 'https://www.dallascowboys.com/';" id="myButton" class="float-left submit-button" >Cowboys Home Page</button>
+									<button onclick="location.href = 'https://www.49ers.com/';" id="myButton" class="float-left submit-button" >49ers Home Page</button>
+								</div>
+								<div class="col align-center">
+									<div class="image square fit">
+										<img src="{{ url_for('static', filename='images/pic04.jpg') }}" alt="" />
+									</div>
+									<p>New York Giants & Green Bay Packers (4 wins) </p>
+									<button onclick="location.href = 'https://www.giants.com/';" id="myButton" class="float-left submit-button" >Giants Home Page</button>
+									<button onclick="location.href = 'https://www.packers.com/';" id="myButton" class="float-left submit-button" >Packers Home Page</button>
+								</div>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+
+		<!-- Scripts -->
+		
+			<script src="https://d3js.org/d3.v6.min.js"></script>
+			<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+			<script src="{{ url_for('static', filename='css/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/main.js') }}"></script>
+
+
+			<!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
+			<!-- <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> -->
+			
+			<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script> -->
+			
+			<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+			
+
+	</body>
+</html>
