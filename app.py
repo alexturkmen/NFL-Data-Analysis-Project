@@ -47,9 +47,9 @@ def videos():
     return render_template("videos.html")
 
 
-@app.route("/heatmap")
-def heatmap():
-    return render_template("heatmap.html")
+@app.route("/graphs")
+def graphs():
+    return render_template("graphs.html")
 
 
 

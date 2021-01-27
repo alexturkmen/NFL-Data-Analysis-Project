@@ -100,7 +100,7 @@ let layout = {
       title: "Years"
   },
   yaxis: {
-      title: "Salary in million $",
+      title: "Salary (Millions $)",
     // autorange: true,
     // type: "linear",
     range: [0, 2500000]
@@ -171,7 +171,7 @@ function buildDropdownPlot(first_year) {
   },
   yaxis: {
     range: [0, 35000000],
-    title: "Salary in million $"
+    title: "Salary (Millions $)"
   },
   title:`Salary by Player in ${first_year}`
   };
