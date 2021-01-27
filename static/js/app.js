@@ -1,10 +1,12 @@
+// Creating  a function to build the scatter plot
+
 function buildScatterPlot() {
   /* data route */
   const url = "/api/salaries";
   d3.json(url).then(function(data) {
 
-    // console.log(data);
 
+  // Creating a function to calculate averages
 function calcAvg(year_no) {
   let results = data.filter((item) => {
     return item.year === year_no;
@@ -24,12 +26,39 @@ function calcAvg(year_no) {
 
 }
 
+
+function median(year_no){
+
+  let results = data.filter((item) => {
+    return item.year === year_no;
+  })
+
+  let salary = results.map((item) => {
+    return item.salary;
+  })
+
+  if(salary.length ===0) return 0;
+
+  salary.sort(function(a,b){
+    return a-b;
+  });
+
+  var half = Math.floor(salary.length / 2);
+
+  if (salary.length % 2)
+    return salary[half];
+
+  return (salary[half - 1] + salary[half]) / 2.0;
+}
+
+console.log(median(2015))
+
 console.log(calcAvg(2015))
 
-let trace = {
+let trace_avg = {
   type: "scatter",
-  mode: "lines",
-  // name: name,
+  // mode: "lines",
+  name: "Average",
   x: [2015, 2016, 2017, 2018, 2019, 2020],
   y: [calcAvg(2015), calcAvg(2016), calcAvg(2017), calcAvg(2018), calcAvg(2019), calcAvg(2020)],
   line: {
@@ -37,21 +66,45 @@ let trace = {
   }
 };
 
-let dataScatter = [trace];
+let trace_median = {
+  type: "scatter",
+  // mode: "lines",
+  name: "Median",
+  x: [2015, 2016, 2017, 2018, 2019, 2020],
+  y: [median(2015), median(2016), median(2017), median(2018), median(2019), median(2020)],
+  line: {
+    color: "green"
+  }
+};
+
+
+let dataScatter = [trace_avg, trace_median];
 
 let layout = {
+  showlegend: true,
+  legend: {
+    x: 1,
+    y: 1,
+    traceorder: 'normal',
+    font: {
+      family: 'sans-serif',
+      size: 12,
+      color: '#000'
+    },
+    bgcolor: '#E2E2E2',
+    bordercolor: '#FFFFFF',
+    borderwidth: 2
+  },
   title: `Average Salary Data by Year`,
   xaxis: {
       title: "Years"
-  //   range: [startDate, endDate],
-  //   type: "date"
   },
   yaxis: {
       title: "Salary in million $",
-    autorange: true,
-    type: "linear"
+    // autorange: true,
+    // type: "linear",
+    range: [0, 2500000]
   },
-  showlegend: false
 };
 
 Plotly.newPlot("plot", dataScatter, layout);
@@ -60,14 +113,14 @@ Plotly.newPlot("plot", dataScatter, layout);
 
 }
 
+// Building the scatter plot
 buildScatterPlot();
 
 
+// *****************************************************
 
 
-
-
-
+// Creating a function to build the chart with a dropdown menu
 
 function buildDropdownPlot(first_year) {
   /* data route */
@@ -112,13 +165,15 @@ function buildDropdownPlot(first_year) {
 
   let layout1 = {
   xaxis: {
-    title: "Year"
+    // title: "Year",
+    showticklabels: false
     // rangeslider: {}
   },
   yaxis: {
-    range: [0, 25000000]
+    range: [0, 35000000],
+    title: "Salary in million $"
   },
-  title:'Salary Dropdown'
+  title:`Salary by Player in ${first_year}`
   };
 
   Plotly.newPlot('plot2', data1, layout1);
@@ -126,10 +181,9 @@ function buildDropdownPlot(first_year) {
 })
 }
 
+// *****************************************************
 
-
-
-
+// Creating a function to build the dropdown menu, and calling the buildDropDownPlot function within it
 
 function buildDropDown() {
 
@@ -166,7 +220,12 @@ function buildDropDown() {
 
   }
 
+
+  // Building the dropdown menu
+
   buildDropDown()
+
+  // Creating a function to change the background color of the dropdown menu. This function is called within the index.html file
 
   function clrchange()
   {
