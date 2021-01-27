@@ -127,7 +127,7 @@ function buildDropdownPlot(first_year) {
   const url = "/api/salaries";
   d3.json(url).then(function(response) {
 
-    console.log(response);
+    // console.log(response);
 
 
   let resultsByYear = response.filter((item) => {
