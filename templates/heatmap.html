@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Heat Map of Winners</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">Home</span></a></div>
+				<a href="#menu">All Punts Intended</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/heatmap">Heat Map</a></li>
+					<li><a href="/videos">Half-Time Shows</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>Heat Map of Past Super Bowl Winning Teams thru the Years</h1>
+								<p>blah blah blah</p>
+
+
+		<!-- Scripts -->
+			<!-- <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> -->
+
+			<script src="{{ url_for('static', filename='css/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/skel.min.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/util.js') }}"></script>
+			<script src="{{ url_for('static', filename='css/main.js') }}"></script>
+
+	</body>
+
+</html>

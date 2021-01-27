@@ -42,6 +42,15 @@ engine = create_engine(URI)
 def home():
     return render_template("index.html")
 
+@app.route("/videos")
+def videos():
+    return render_template("videos.html")
+
+
+@app.route("/heatmap")
+def heatmap():
+    return render_template("heatmap.html")
+
 
 
 @app.route("/api/salaries")
