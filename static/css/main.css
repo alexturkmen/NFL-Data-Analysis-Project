@@ -3705,7 +3705,7 @@
 		-ms-justify-content: center;
 		justify-content: center;
 		/* background-image: url("http://127.0.0.1:5000/static/images/banner.jpg"); */
-		background-image: url("public/static/images/banner.jpg");
+		background-image: url("/static/images/banner.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
