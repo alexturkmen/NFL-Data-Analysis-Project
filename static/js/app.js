@@ -157,7 +157,11 @@ function buildDropdownPlot(first_year) {
   y: salariesForGraph,
   mode: 'markers',
   type: 'scatter',
-  marker: { size: 5 }
+  marker: { 
+    size: 4,
+    // symbol: "x",
+    color: "green"
+   }
   }
 
   let data1 = [trace1]
