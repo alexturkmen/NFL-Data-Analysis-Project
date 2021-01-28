@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = {top: 30, right: 30, bottom: 30, left: 30},
+var margin = {top: 30, right: 30, bottom: 70, left: 70},
   width = 600 - margin.left - margin.right,
-  height = 1200 - margin.top - margin.bottom;
+  height = 1500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#mygraph")
@@ -90,6 +90,32 @@ svg.selectAll("rect")
     .attr("width", x.bandwidth() )
     .attr("height", y.bandwidth() )
     .style("fill", function(d) { return myColor(d.current_salary)} )
+
+    svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "end")
+    .attr("x", (width / 2)+ 250)
+    .attr("y", height + 40)
+    .style("font-size", "20px")
+    .text("Player Height (inches)");
+
+    svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -50)
+    .attr("x", 0 )
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .style("font-size", "20px")
+    .text("Player Weight (pounds)");
+
+    svg.append("text")
+      .attr("class", "title")
+      .attr("y", -10)
+      .attr("x", (width / 2) - 220)
+      .attr("fill", "black")
+      .text("Player Weight / Player Height Comparison")
+      .style("font-size", "25px");
     
     
 
