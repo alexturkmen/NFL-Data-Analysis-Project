@@ -1,7 +1,5 @@
 # The Super Bowl Statisticians Present:
 
----
-
 ## Sundays are reserved for rest & football.
 
 > [Heroku Deployment Link](https://nfl-project-two.herokuapp.com/)
