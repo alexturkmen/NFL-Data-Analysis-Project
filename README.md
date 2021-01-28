@@ -6,8 +6,8 @@
 
 ### Members:
 
-- Ida Astaneh: [link]https://github.com/iastanehasl
-- Alex Ulas Turkmen: [link]https://github.com/alexturkmen
-- Camerson Foster: [link]https://github.com/BananasFoster623
-- Michael Alread: [link]https://github.com/malreadjr
-- Anis Ali: [link]https://github.com/anisali01
+- Ida Astaneh: https://github.com/iastanehasl
+- Alex Ulas Turkmen: https://github.com/alexturkmen
+- Camerson Foster: https://github.com/BananasFoster623
+- Michael Alread: https://github.com/malreadjr
+- Anis Ali: https://github.com/anisali01
