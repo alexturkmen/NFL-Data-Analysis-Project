@@ -51,6 +51,11 @@ def videos():
 def graphs():
     return render_template("graphs.html")
 
+    
+@app.route("/mla")
+def mla():
+    return render_template("mla.html")
+
 
 
 @app.route("/api/salaries")
